@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>RC Profile</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>RC Profile Maker</h1>
+        <form method="POST" enctype="multipart/form-data" id="overlay-form">
+            <label for="user_image">Select Your Profile Photo:</label>
+            <input type="file" name="user_image" accept="image/*" required><br><br>
+
+            <label for="logo_choice">Your Country of Operation:</label>
+            <select name="logo_choice" required>
+                {% for logo_name, _ in microsoft_logos.items() %}
+                    <option value="{{ logo_name }}">{{ logo_name }}</option>
+                {% endfor %}
+            </select><br><br>
+
+            <div class="loader" id="loader"></div>
+            <input type="submit" value="Make My Profile">
+        </form>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const overlayForm = document.getElementById("overlay-form");
+            const loader = document.getElementById("loader");
+
+            overlayForm.addEventListener("submit", function () {
+                loader.style.display = "block"; // Show the loader when the form is submitted
+            });
+        });
+    </script>
+</body>
+</html>

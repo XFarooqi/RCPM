@@ -1,0 +1,89 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('/static/rcbg.png');
+    background-repeat:no-repeat;
+    background-size: cover;
+    background-color: #424242;
+}
+
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 100px rgba(0, 0, 0, 0.6);
+    position: relative; /* Added for spinner positioning */
+}
+
+@media (max-width: 768px) {
+    body {
+        background-size: auto; /* Adjust the background size as needed */
+        background-attachment: scroll;
+    }
+
+    .container {
+        max-width: 95%; /* Adjust the container width for smaller screens */
+    }
+}
+
+.container:hover {
+    box-shadow: 0px 0px 150px rgba(0, 0, 0, 0.6); /* Add a shadow on hover */
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type="file"] {
+    width: 95%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Spinner styles */
+.loader {
+    border: 6px solid #007BFF; /* Blue color */
+    border-top: 6px solid #f4f4f4; /* Background color */
+    border-radius: 50%;
+    width: 30px; /* Adjust the size as needed */
+    height: 30px; /* Adjust the size as needed */
+    animation: spin 1s linear infinite; /* Apply rotation animation */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none; /* Initially hidden */
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+input[type="submit"] {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
