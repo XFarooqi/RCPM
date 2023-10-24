@@ -48,7 +48,7 @@ microsoft_logos = {
     "RC Mexico": "static/RCMexico.png",
     "RC New Zealand": "static/RCNewZealand.png",
     "RC South Africa": "static/RCSouthAfrica.png",
-    "RC UK": "static/RCUk.png"
+    "RC UK": "static/RCUK.png"
 
 }
 
